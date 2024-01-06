@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/product}">Home</a>
+<table>
+<form  th:object="${phone}" method="post">
+    <input th:field="*{id}" type="hidden" />
+    <p>name</p>
+    <input th:field="*{name}" type="text" /><br>
+    <p>price</p>
+    <input th:field="*{price}" type="number" /><br>
+    <p>year</p>
+    <input th:field="*{year}" type="number"/><br>
+
+
+</form>
+</table>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/product/search}" method="post" >
+    <input name="name" type="text"/><br>
+    <input type="submit" value="search" />
+</form>
+<a th:href="@{/product/add}">
+add product
+</a>
+<table>
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Year</th>
+    <th>edit</th>
+    <th>delete</th>
+        <th>show</th>
+    </tr>
+</thead>
+    <tbody>
+    <tr th:each="row,rowStat:${phone}">
+        <td th:text="${row.getName()}"></td>
+        <td th:text="${row.getPrice}"></td>
+        <td th:text="${row.getYear()}"></td>
+        <td><a th:href="@{/product/{id}/edit(id=${row.getId()})}">edit</a></td>
+        <td><a th:href="@{/product/{id}/remote(id=${row.getId()})}">remote</a></td>
+        <td><a th:href="@{/product/{id}/show(id=${row.getId()})}">show</a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
